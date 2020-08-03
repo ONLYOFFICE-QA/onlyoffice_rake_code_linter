@@ -4,18 +4,20 @@ require 'onlyoffice_rake_code_linter'
 
 # Main task
 desc 'Find if any files do not containing correct latvian adress'
-task :check_file_without_latvian_adress do
-  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_address
+task :check_file_without_latvian_address, [:exclude_paths] do |_, args|
+  exclude_paths = args.fetch(:exclude_paths, [])
+  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_address(exclude_paths: exclude_paths)
 end
 
 desc 'Find if any files do not containing correct latvian adress'
-task :check_file_without_latvian_adress do
+task :check_file_without_lf_ending do
   OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_lf_ending
 end
 
 desc 'Find if any files do not containing license'
-task :check_file_without_license do
-  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_license
+task :check_file_without_license, [:exclude_paths] do |_, args|
+  exclude_paths = args.fetch(:exclude_paths, [])
+  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_address(exclude_paths: exclude_paths)
 end
 
 desc 'Check files for trailing newline'
@@ -24,9 +26,10 @@ task :check_file_trailing_newline do
 end
 
 desc 'Perform check on source files'
-task :check_source_files do
-  Rake::Task['check_file_without_license'].invoke
+task :check_source_files, [:exclude_paths] do |_, args|
+  exclude_paths = args.fetch(:exclude_paths, [])
+  Rake::Task['check_file_without_license'].invoke(exclude_paths: exclude_paths)
   Rake::Task['check_file_without_lf_ending'].invoke
   Rake::Task['check_file_trailing_newline'].invoke
-  Rake::Task['check_file_without_latvian_adress'].invoke
+  Rake::Task['check_file_without_latvian_address'].invoke(exclude_paths: exclude_paths)
 end
