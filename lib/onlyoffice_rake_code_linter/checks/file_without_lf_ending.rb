@@ -3,19 +3,16 @@
 module OnlyofficeRakeCodeLinter
   # Task with check line without lf ending
   class OnlyofficeRakeCodeLinter
-    def self.file_without_lf_ending
-      latvian_address = 'LV-1050'
-      all_js_files = Dir['./**/*.js']
-      files_without_address = []
-      all_js_files.each do |file|
-        next if excluded_source_paths.any? { |exclude| file.include?(exclude) }
-
-        files_without_address << file unless File.read(file).include?(latvian_address)
+    def self.file_without_lf_ending(path = './**/*.js')
+      all_files = Dir[path]
+      files_without_ending = []
+      all_files.each do |file|
+        files_without_ending << file if File.read(file).include?("\r")
       end
 
-      return if files_without_address.empty?
+      return if files_without_ending.empty?
 
-      raise("Files without latvian address `#{latvian_address}`: #{files_without_address}")
+      raise("Files without LF ending: #{files_without_ending}")
     end
   end
 end
