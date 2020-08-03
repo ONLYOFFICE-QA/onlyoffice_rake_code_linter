@@ -3,9 +3,9 @@
 module OnlyofficeRakeCodeLinter
   # Task with check latvian address
   class OnlyofficeRakeCodeLinter
-    def self.file_without_address
+    def self.file_without_address(path = './**/*.js', excluded_source_paths = [])
       latvian_address = 'LV-1050'
-      all_js_files = Dir['./**/*.js']
+      all_js_files = Dir[path]
       files_without_address = []
       all_js_files.each do |file|
         next if excluded_source_paths.any? { |exclude| file.include?(exclude) }
