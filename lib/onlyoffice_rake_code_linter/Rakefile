@@ -2,36 +2,31 @@
 
 require 'onlyoffice_rake_code_linter'
 
-path = File.expand_path(__dir__)
-Dir.glob("#{path}/tasks/**/*.rake").each { |f| import f }
-
 # Main task
-module OnlyofficeRakeCodeLinter
-  desc 'Find if any files do not containing correct latvian adress'
-  task :check_file_without_latvian_adress do
-    file_without_address
-  end
+desc 'Find if any files do not containing correct latvian adress'
+task :check_file_without_latvian_adress do
+  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_address
+end
 
-  desc 'Find if any files do not containing correct latvian adress'
-  task :check_file_without_latvian_adress do
-    file_without_lf_ending
-  end
+desc 'Find if any files do not containing correct latvian adress'
+task :check_file_without_latvian_adress do
+  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_lf_ending
+end
 
-  desc 'Find if any files do not containing license'
-  task :check_file_without_license do
-    file_without_license
-  end
+desc 'Find if any files do not containing license'
+task :check_file_without_license do
+  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_license
+end
 
-  desc 'Check files for trailing newline'
-  task :check_file_trailing_newline do
-    file_without_trailing_newline
-  end
+desc 'Check files for trailing newline'
+task :check_file_trailing_newline do
+  OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter.file_without_trailing_newline
+end
 
-  desc 'Perform check on source files'
-  task :check_source_files do
-    Rake::Task['check_file_without_license'].invoke
-    Rake::Task['check_file_without_lf_ending'].invoke
-    Rake::Task['check_file_trailing_newline'].invoke
-    Rake::Task['check_file_without_latvian_adress'].invoke
-  end
+desc 'Perform check on source files'
+task :check_source_files do
+  Rake::Task['check_file_without_license'].invoke
+  Rake::Task['check_file_without_lf_ending'].invoke
+  Rake::Task['check_file_trailing_newline'].invoke
+  Rake::Task['check_file_without_latvian_adress'].invoke
 end
