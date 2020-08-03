@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/onlyoffice-rake-code-linter.iml" filepath="$PROJECT_DIR$/.idea/onlyoffice-rake-code-linter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/onlyoffice_rake_code_linter.iml" filepath="$PROJECT_DIR$/.idea/onlyoffice_rake_code_linter.iml" />
     </modules>
   </component>
 </project>
