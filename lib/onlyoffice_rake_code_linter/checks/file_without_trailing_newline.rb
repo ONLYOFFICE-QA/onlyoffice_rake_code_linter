@@ -3,8 +3,8 @@
 module OnlyofficeRakeCodeLinter
   # Task with check files without newline
   class OnlyofficeRakeCodeLinter
-    def self.file_without_trailing_newline
-      all_files = Dir['./**/*.js']
+    def self.file_without_trailing_newline(path = './**/*.js')
+      all_files = Dir[path]
       files_without_trailing_line = []
       all_files.each do |file|
         files_without_trailing_line << file unless IO.readlines(file)[-1].end_with?("\n")
