@@ -4,6 +4,7 @@ module OnlyofficeRakeCodeLinter
   # Task with check files without newline
   class Foo
     def self.file_without_trailing_newline
+      puts('WORKING')
       all_files = Dir['./**/*.js']
       files_without_trailing_line = []
       all_files.each do |file|
