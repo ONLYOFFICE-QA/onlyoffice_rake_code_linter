@@ -3,9 +3,9 @@
 module OnlyofficeRakeCodeLinter
   # Task with check file without license
   class OnlyofficeRakeCodeLinter
-    def self.file_without_license
+    def self.file_without_license(path = './**/*.js', excluded_source_paths = [])
       license_header = 'Copyright Ascensio System'
-      all_js_files = Dir['./**/*.js']
+      all_js_files = Dir[path]
       files_without_license = []
       all_js_files.each do |file|
         next if excluded_source_paths.any? { |exclude| file.include?(exclude) }
