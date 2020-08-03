@@ -3,6 +3,9 @@
 module OnlyofficeRakeCodeLinter
   # Task with check files without newline
   class OnlyofficeRakeCodeLinter
+    # Fail if any file without newline at end
+    # @param path [String] pattern to search file
+    # @return [nil] if all good
     def self.file_without_trailing_newline(path = './**/*.js')
       all_files = Dir[path]
       files_without_trailing_line = []

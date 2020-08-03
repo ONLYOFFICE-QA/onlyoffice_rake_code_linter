@@ -3,6 +3,10 @@
 module OnlyofficeRakeCodeLinter
   # Task with check latvian address
   class OnlyofficeRakeCodeLinter
+    # Fail if any file without address
+    # @param path [String] pattern to search file
+    # @param excluded_source_paths [Array<String>] excluded patterns
+    # @return [nil] if all good
     def self.file_without_address(path = './**/*.js', excluded_source_paths = [])
       latvian_address = 'LV-1050'
       all_js_files = Dir[path]

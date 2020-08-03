@@ -3,6 +3,9 @@
 module OnlyofficeRakeCodeLinter
   # Task with check line without lf ending
   class OnlyofficeRakeCodeLinter
+    # Fail if any file lf ending of lines
+    # @param path [String] pattern to search file
+    # @return [nil] if all good
     def self.file_without_lf_ending(path = './**/*.js')
       all_files = Dir[path]
       files_without_ending = []
