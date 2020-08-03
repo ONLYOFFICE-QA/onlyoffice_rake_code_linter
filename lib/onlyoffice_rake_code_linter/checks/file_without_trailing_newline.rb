@@ -2,7 +2,7 @@
 
 module OnlyofficeRakeCodeLinter
   # Task with check files without newline
-  class OnlyofficeRakeCodeLinter
+  class Foo
     def self.file_without_trailing_newline
       all_files = Dir['./**/*.js']
       files_without_trailing_line = []

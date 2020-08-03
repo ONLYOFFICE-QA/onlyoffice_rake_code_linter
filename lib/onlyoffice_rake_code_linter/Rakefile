@@ -20,7 +20,7 @@ end
 
 desc 'Check files for trailing newline'
 task :check_file_trailing_newline do
-  OnlyofficeRakeCodeLinter.file_without_trailing_newline
+  Foo.file_without_trailing_newline
 end
 
 desc 'Perform check on source files'
