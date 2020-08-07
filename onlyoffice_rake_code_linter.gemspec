@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.name = OnlyofficeRakeCodeLinter::NAME
   s.version = OnlyofficeRakeCodeLinter::VERSION
   s.platform = Gem::Platform::RUBY
+  s.required_ruby_version = '>= 2.4'
   s.authors = ['ONLYOFFICE', 'Pavel Lobashov']
   s.email = %w[shockwavenn@gmail.com]
   s.summary = 'Lib with rake tasks to perform lint on source repos'
@@ -24,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('rake', '~> 13.0')
   s.add_development_dependency('overcommit', '0.55.0')
   s.add_development_dependency('rspec', '3.9.0')
-  s.add_development_dependency('rubocop', '0.88.0')
+  s.add_development_dependency('rubocop', '0.89.0')
   s.add_development_dependency('rubocop-performance', '1.7.1')
   s.add_development_dependency('rubocop-rake', '0.5.1')
   s.add_development_dependency('rubocop-rspec', '1.42.0')
