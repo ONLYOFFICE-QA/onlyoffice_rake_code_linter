@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name = OnlyofficeRakeCodeLinter::NAME
   s.version = OnlyofficeRakeCodeLinter::VERSION
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.4'
+  s.required_ruby_version = '>= 2.5'
   s.authors = ['ONLYOFFICE', 'Pavel Lobashov']
   s.email = %w[shockwavenn@gmail.com]
   s.summary = 'Lib with rake tasks to perform lint on source repos'
