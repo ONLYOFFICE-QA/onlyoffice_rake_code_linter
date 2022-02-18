@@ -6,6 +6,10 @@
 
 * Initial Release
 
+### Fixes
+
+* Fix `markdownlint` failure because of old `nodejs` in CI
+
 ### Changes
 
 * Allow failures on `ruby-head` in CI
