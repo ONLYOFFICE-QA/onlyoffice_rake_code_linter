@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'onlyoffice_rake_code_linter/version'
+require 'onlyoffice_rake_code_linter/version'
 require_relative 'onlyoffice_rake_code_linter/checks/file_without_address'
 require_relative 'onlyoffice_rake_code_linter/checks/file_without_lf_ending'
 require_relative 'onlyoffice_rake_code_linter/checks/file_without_license'
