@@ -18,17 +18,18 @@ Gem::Specification.new do |s|
     'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
     'documentation_uri' => "https://www.rubydoc.info/gems/#{s.name}",
     'homepage_uri' => s.homepage,
-    'source_code_uri' => s.homepage
+    'source_code_uri' => s.homepage,
+    'rubygems_mfa_required' => 'true'
   }
   s.files = Dir['lib/**/*']
   s.license = 'AGPL-3.0'
-  s.add_runtime_dependency('rake', '~> 13.0')
-  s.add_development_dependency('overcommit', '0.58.0')
-  s.add_development_dependency('rspec', '3.10.0')
-  s.add_development_dependency('rubocop', '0.93.1')
-  s.add_development_dependency('rubocop-performance', '1.10.2')
-  s.add_development_dependency('rubocop-rake', '0.5.1')
-  s.add_development_dependency('rubocop-rspec', '1.44.1')
-  s.add_development_dependency('simplecov', '0.21.2')
-  s.add_development_dependency('yard', '0.9.27')
+  s.add_runtime_dependency('rake', '~> 13')
+  s.add_development_dependency('overcommit', '~> 0')
+  s.add_development_dependency('rspec', '~> 0')
+  s.add_development_dependency('rubocop', '~> 1')
+  s.add_development_dependency('rubocop-performance', '~> 1')
+  s.add_development_dependency('rubocop-rake', '~> 0')
+  s.add_development_dependency('rubocop-rspec', '~> 1')
+  s.add_development_dependency('simplecov', '~> 0')
+  s.add_development_dependency('yard', '>= 0.9.20')
 end
