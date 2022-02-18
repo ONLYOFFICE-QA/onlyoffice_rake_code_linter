@@ -10,7 +10,7 @@ module OnlyofficeRakeCodeLinter
       all_files = Dir[path]
       files_without_trailing_line = []
       all_files.each do |file|
-        files_without_trailing_line << file unless IO.readlines(file)[-1].end_with?("\n")
+        files_without_trailing_line << file unless File.readlines(file)[-1].end_with?("\n")
       end
       raise("Files without newline at end: #{files_without_trailing_line}") unless files_without_trailing_line.empty?
     end
