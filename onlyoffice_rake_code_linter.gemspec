@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.license = 'AGPL-3.0'
   s.add_runtime_dependency('rake', '~> 13')
   s.add_development_dependency('overcommit', '~> 0')
-  s.add_development_dependency('rspec', '~> 0')
+  s.add_development_dependency('rspec', '~> 3')
   s.add_development_dependency('rubocop', '~> 1')
   s.add_development_dependency('rubocop-performance', '~> 1')
   s.add_development_dependency('rubocop-rake', '~> 0')
