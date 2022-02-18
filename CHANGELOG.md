@@ -5,6 +5,7 @@
 ### New Features
 
 * Initial Release
+* Add `ruby-3.0` and `ruby-3.1` to CI
 
 ### Fixes
 
