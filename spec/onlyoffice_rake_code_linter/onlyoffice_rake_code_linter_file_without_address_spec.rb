@@ -7,6 +7,7 @@ RSpec.describe OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter, '.file_withou
   end
 
   it 'do not raise error on file with address' do
-    described_class.file_without_address(path: "#{Dir.pwd}/spec/test_files/good/file_with_address/*.js")
+    expect { described_class.file_without_address(path: "#{Dir.pwd}/spec/test_files/good/file_with_address/*.js") }
+      .not_to raise_error
   end
 end

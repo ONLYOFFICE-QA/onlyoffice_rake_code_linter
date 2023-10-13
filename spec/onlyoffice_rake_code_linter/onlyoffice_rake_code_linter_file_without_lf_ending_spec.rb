@@ -7,6 +7,7 @@ RSpec.describe OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter, '.file_withou
   end
 
   it 'do not raise error on file with lf ending' do
-    described_class.file_without_lf_ending("#{Dir.pwd}/spec/test_files/good/file_with_lf/*.js")
+    expect { described_class.file_without_lf_ending("#{Dir.pwd}/spec/test_files/good/file_with_lf/*.js") }
+      .not_to raise_error
   end
 end
