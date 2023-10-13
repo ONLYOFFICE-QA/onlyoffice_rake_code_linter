@@ -7,6 +7,7 @@ RSpec.describe OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter, '.file_withou
   end
 
   it 'do not raise error on file with newline' do
-    described_class.file_without_trailing_newline("#{Dir.pwd}/spec/test_files/good/file_with_newline/*.js")
+    expect { described_class.file_without_trailing_newline("#{Dir.pwd}/spec/test_files/good/file_with_newline/*.js") }
+      .not_to raise_error
   end
 end

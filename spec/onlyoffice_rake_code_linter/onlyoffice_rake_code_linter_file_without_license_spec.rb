@@ -7,6 +7,7 @@ RSpec.describe OnlyofficeRakeCodeLinter::OnlyofficeRakeCodeLinter, '.file_withou
   end
 
   it 'do not raise error on file with license' do
-    described_class.file_without_license(path: "#{Dir.pwd}/spec/test_files/good/file_without_license/*.js")
+    expect { described_class.file_without_license(path: "#{Dir.pwd}/spec/test_files/good/file_without_license/*.js") }
+      .not_to raise_error
   end
 end
