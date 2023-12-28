@@ -8,6 +8,7 @@
 * Add `ruby-3.0` and `ruby-3.1` to CI
 * Add `ruby-3.3` to CI
 * Add `yamllint` check in CI
+* Add `dependabot` check for `GitHub Actions`
 
 ### Fixes
 
