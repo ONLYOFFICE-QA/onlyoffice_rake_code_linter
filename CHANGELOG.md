@@ -21,3 +21,4 @@
 * Freeze dependencies versions in `Gemfile.lock`
 * Check `dependabot` at 8:00 Moscow time daily
 * Changes from `rubocop-rspec` update to 2.9.0
+* Fix `rubocop-1.65.0` cop `Gemspec/AddRuntimeDependency`
